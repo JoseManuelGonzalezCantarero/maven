@@ -13,40 +13,41 @@ use Doctrine\ORM\Mapping as ORM;
 class User
 {
     /**
-     * @var int
+     * @var integer
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="bio", type="text")
+     * @ORM\Column(name="bio", type="text", nullable=false)
      */
     private $bio;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
      */
     private $email;
+
 
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -57,6 +58,7 @@ class User
      * Set name
      *
      * @param string $name
+     *
      * @return User
      */
     public function setName($name)
@@ -69,7 +71,7 @@ class User
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -80,6 +82,7 @@ class User
      * Set bio
      *
      * @param string $bio
+     *
      * @return User
      */
     public function setBio($bio)
@@ -92,7 +95,7 @@ class User
     /**
      * Get bio
      *
-     * @return string 
+     * @return string
      */
     public function getBio()
     {
@@ -103,6 +106,7 @@ class User
      * Set email
      *
      * @param string $email
+     *
      * @return User
      */
     public function setEmail($email)
@@ -115,7 +119,7 @@ class User
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
